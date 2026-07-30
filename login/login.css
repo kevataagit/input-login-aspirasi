@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+/* BODY + BACKGROUND */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("../assets/mashakujou.png") center / cover no-repeat;
+    /* background: linear-gradient(
+        rgba(0,0,0,1),
+        rgba(0,0,0,0.2)
+    ); */
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+/* LOGIN BOX */
+.login-container {
+    width: 100%;
+    max-width: 360px;
+    padding: 25px;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    background: rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: background 0.5s ease, transform 0.5s ease;
+}
+
+/* TITLE */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 11px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 11px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: #484848;
+    color: white;
+    font-size: 15px;
+}
+
+/* TOGGLE */
+.toggle-btn {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.toggle-btn button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+/* HIDDEN */
+.hidden {
+    display: none;
+}
+
+/* 🔥 INI INTI PERMINTAAN KAMU 🔥 */
+@media (hover: hover) {
+    .login-container:hover {
+        transform: translateY(-5px);
+        background: rgba(255,255,255,0.85);
+        color: black;
+    }
+
+    /* TOGGLE IKUT BERUBAH WARNA */
+    .login-container:hover .toggle-btn button {
+        color: black;
+    }
+}

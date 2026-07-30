@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 12px;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("assets/mashakujou.png") center / cover no-repeat;
+    /* background: linear-gradient(
+        rgba(0,0,0,1),
+        rgba(0,0,0,0.5)
+    ); */
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    z-index: -1;
+}
+
+/* 🔥 FIX MOBILE LAG */
+@media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 10px 20px black;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* FORM */
+.form-group {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.4);
+}
+
+hr {
+    margin: 30px 0;
+}
+
+/* TABLE */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 14px;
+}
+
+th {
+    background: rgba(0,0,0,0.3);
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* STATUS */
+.status-menunggu { color: orange; font-weight: bold; }
+.status-proses { color: dodgerblue; font-weight: bold; }
+.status-selesai { color: limegreen; font-weight: bold; }
+
+/* FOOTER */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logout {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    th, td {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}

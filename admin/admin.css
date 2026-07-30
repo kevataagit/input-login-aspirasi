@@ -1,0 +1,373 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+/* ===============================
+   FIXED BACKGROUND (ALL DEVICE)
+================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/mashakujou.png");
+  /* background:linear-gradient(
+    rgb(0,0,0,1),
+    rgb(0,0,0,0.6)
+    ); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transform: scale(1.02);
+  filter: brightness(0.6);
+}
+
+/* ===============================
+   BODY
+================================ */
+body {
+  font-family: "Segoe UI", sans-serif;
+  padding: 16px;
+  color: white;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ===============================
+   CONTAINER (SCROLL AREA)
+================================ */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 16px;
+  color: white;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+  max-height: 90vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===============================
+   TRANSPARENT SCROLLBAR
+================================ */
+.container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* Firefox */
+.container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* ===============================
+   HEADER
+================================ */
+h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+/* ===============================
+   LOGOUT BUTTON
+================================ */
+.btn-logout {
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+.btn-logout:hover {
+  background: #dc2626;
+}
+
+.btn-logout:active {
+  transform: scale(0.95);
+}
+
+.terap {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ===============================
+FILTER BOX
+================================ */
+.filter-box {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.filter-box input,
+.filter-box select {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  outline: none;
+}
+.filter-box select option{
+  background: #1f1f1f;
+  color: white;
+}
+
+.filter-box input::placeholder {    
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-box button {
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 0.1s,
+    background 0.2s;
+}
+
+.filter-box button:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.filter-box button:active {
+  transform: scale(0.95);
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .filter-box {
+    flex-direction: column;
+  }
+
+  .filter-box input,
+  .filter-box select,
+  .filter-box button {
+    width: 100%;
+  }
+}
+
+/* ===============================
+   STATUS FILTER (PILLS)
+================================ */
+.status-filter {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.status-filter a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.12);
+  transition: background 0.2s;
+}
+
+.status-filter a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.status-filter a.active {
+  background: rgba(255, 255, 255, 0.45);
+  color: #000;
+  font-weight: 600;
+}
+
+/* ===============================
+   TABLE (DESKTOP)
+================================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===============================
+   ACTION BUTTONS
+================================ */
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-edit,
+.btn-hapus {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: white;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  text-align: center;
+}
+
+.btn-edit {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.btn-edit:hover {
+  background: #6b6b6b;
+}
+
+.btn-hapus {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.btn-hapus:hover {
+  background: #c82333;
+}
+
+/* ===============================
+   PAGINATION
+================================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 16px 0;
+  flex-wrap: wrap;
+}
+
+.pagination a {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.pagination a.active {
+  background: rgba(255, 255, 255, 0.4);
+  font-weight: bold;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE (CARD MODE)
+================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    max-height: none;
+    padding: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  .btn-logout {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* TABLE → CARD */
+  table,
+  thead,
+  tbody,
+  th,
+  tr {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    background: rgba(0, 0, 0, 0.35);
+    margin-bottom: 14px;
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  td {
+    border: none;
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .btn-edit,
+  .btn-hapus {
+    flex: 1;
+  }
+}

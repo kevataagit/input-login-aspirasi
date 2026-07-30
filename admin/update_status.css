@@ -1,0 +1,242 @@
+/* ===============================
+   SCROLLBAR (TIPIS & HALUS)
+================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+}
+
+/* ===============================
+   GLOBAL
+================================ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background layer */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/mashakujou.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+
+  /* efek */
+  transform: scale(1.05);
+  filter: brightness(0.55) blur(2px);
+}
+
+
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  max-width: 520px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ===============================
+   TITLE & INFO
+================================ */
+h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+p {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 12px;
+  border-left: 4px solid rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   INFO LAPORAN
+================================ */
+.info-box {
+  background: rgba(0, 0, 0, 0.35);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-item .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.info-item .value {
+  font-size: 14px;
+  line-height: 1.5;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* ===============================
+   FORM ELEMENTS
+================================ */
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+  color: white;
+  outline: none;
+}
+
+select option {
+  background: #1f1f1f;
+  color: white;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+select:focus,
+textarea:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+  background: #515151;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background 0.2s,
+    transform 0.1s;
+}
+
+button:hover {
+  background: #6b6b6b;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+a {
+  margin-left: 12px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ===============================
+   RESPONSIVE MOBILE
+================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .info-box {
+    padding: 12px;
+  }
+
+  .info-item .value {
+    font-size: 14px;
+  }
+
+  select,
+  textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    margin-left: 0;
+  }
+}
